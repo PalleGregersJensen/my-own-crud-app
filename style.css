@@ -1,0 +1,8 @@
+body{ background-color: red;}
+
+#participants-form{
+    display: grid;
+    grid-template-columns: auto auto;
+    width: 10vw;
+    gap: 0.3em;
+}

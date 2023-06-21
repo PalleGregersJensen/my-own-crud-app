@@ -39,16 +39,24 @@ function showParticpants(participantsList) {
   for (const participant of participantsList) {
     const participantHtml = /*html*/ `<li>Name: ${participant.name} - Age: ${participant.age} - Occupation: ${participant.occupation} <button class="update-button">Update</button> <button class="delete-button">Delete</button></li>`;
     document.querySelector("#participants-list").insertAdjacentHTML("beforeend", participantHtml);
-  }
 
-  document.querySelector("#participants-list button:last-child").addEventListener("click", updateParticipant);
-  document.querySelector("#participants-list button:last-child").addEventListener("click", deleteParticipant);
+    const participantElement = document.querySelector("#participants-list li:last-child");
+    const updateButton = participantElement.querySelector(".update-button");
+    const deleteButton = participantElement.querySelector(".delete-button");
+
+    updateButton.addEventListener("click", updateParticipant);
+    deleteButton.addEventListener("click", deleteParticipant);
+  }
 }
 
 function updateParticipant() {
   console.log("update participant");
+  
 }
 
 function deleteParticipant() {
   console.log("delete participant");
+  // participants.pop();
+  // console.log(participants);
+  // showParticpants(participants);
 }
